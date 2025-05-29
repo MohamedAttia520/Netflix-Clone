@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieApp </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"defer></script>
+</head>
+
+<body>
+    <section class="sign-in">
+        <div class="container">
+            <div class="sub-container">
+                <div class="logo">
+                    <a href=""><img src="Images/Vector.png" alt=""></a>
+                </div>
+                <div class="sign-in-container">
+                    <div class="sign-in__content">
+                        <form action="" novalidate>
+                            <h2 id="sign-in-title">Sign In</h2>
+                            <input type="email" placeholder="Enter youe mail" id="sign-in-email">
+                            <p id="sign-in-error" style="color:red";></p>
+                            <input type="password" placeholder="Password" id="sign-in-pass">
+                            <button class="sign-btns"  id="sign-in-btn">Sign in</button>
+                            <span>OR</span>
+                            <button class="sign-btns code-btn" disabled>Use a Sign-In Code</button>
+                            <a href="">Forget Password</a>
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Remember_me</label>
+                            </div>
+                            <span class="new-to-movie-app"> New to Movie-App?<a href="" id="sign-up"> Sign up
+                                    now.</a></span>
+                        </form>
+                        <details>
+                            <summary>This page is protected by Google reCAPTCHA to <br> ensure you're not a bot.
+                            </summary>
+                            <br>
+                            <p>The information collected by Google reCAPTCHA is <br> subject to the Google <a
+                                    href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>
+                                and <a href="https://policies.google.com/terms" target="_blank">Terms of <br> Service</a>, and is used
+                                for providing, maintaining, and <br> improving the
+                                reCAPTCHA service and for general <br>security purposes (it is not used for personalized
+                                <br>
+                                advertising by Google).
+                            </p>
+                        </details>
+                    </div>
+                </div>
+                <div class="sign-up-container">
+                    <div class="sign-up-content d-none ">
+                        <h1>Unlimited movies, TV <br> shows, and more</h1>
+                        <p>Ready to watch? Enter your email and password to create  your membership.</p>
+                        <form action="" id="sign-up-form" novalidate>
+                            <h2 id="sign-up-title">Sign Up</h2>
+                            <input type="email" placeholder="Enter youe mail" id="sign-up-mail">
+                            <p id="email-error" style="color:red;"></p>
+                            <input type="password" placeholder="Password" id="sign-up-pass">
+                            <p id="pass-error" style="color:red;"></p>
+                            <input type="password" placeholder="Enter Password Again" id="sign-up-pass-check">
+                            <p id="pass-check-error" style="color:red;"></p>
+                            <button type="submit" class="sign-btns" id="sign-up-now">Sign up Now</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

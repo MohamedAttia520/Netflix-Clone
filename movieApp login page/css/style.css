@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica , sans-serif;
+}
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}
+    
+h2{
+    font-weight: 700;
+    
+}
+h1{
+    color: white;
+    font-weight: 700;
+}
+.sign-in{
+    height: 120vh;
+    background-image: url(../Images/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-fullview.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.sub-container
+{
+width: 80%;
+margin: auto;
+}
+.container
+{
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    inset: 0;
+}
+form input
+{
+    padding: 20px 0;    
+    width: 80%;
+    margin: 10px 0;
+    border: gray 1px solid;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    padding-left: 10px;
+}
+input::placeholder{
+    color: rgba(255, 255, 255, .8);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.remember-me{
+    color: white;
+    display: flex;
+    align-self: flex-start;
+    padding-left: 45px;
+}
+.remember-me label
+{
+    margin: 10px 0 0 10px;
+}
+.remember-me input{
+    width: 20px;
+    height: 20px;
+    accent-color: black;
+    
+}
+.new-to-movie-app
+{
+    align-self: flex-start;
+    padding-left: 45px
+}
+
+.sign-in-container ,.sign-up-container{
+display: flex;
+justify-content: center;
+}
+.sign-in__content ,.sign-up-content{
+    width: 400px;
+    background-color: rgba(0, 0, 0,0.7);
+    min-height: 90vh;
+}
+form button
+{
+    padding: 10px 0;
+    width: 80%;
+    background-color: red;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-size: medium;
+}
+.code-btn{
+    background-color: rgba(67, 66, 66, 0.7);
+}
+h1{
+    font-size: 30px;
+    color: white;
+    
+}
+form h2 ,h1 {
+    padding: 50px 0 20px 0 ;
+    align-self:flex-start;
+    padding-left: 45px;
+    color: white;
+}
+form span{
+    color: rgba(255, 255, 255, .8);
+    font-size: 15px;
+    padding: 15px;
+
+}
+form a{
+    color: white;
+    padding: 15px 0;
+    
+}
+.logo a{
+    text-decoration:none;
+    color: red;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 30px;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+.sign-in__content h2{
+    color: white;
+}
+.sign-btns:hover
+{
+    background-color:rgba(0, 0, 0,0.5) ;
+
+}
+.sign-btns
+{
+    transition-property:background-color;
+    transition-duration: 0.5s;
+    font-weight: 700;
+    cursor: pointer;
+}
+details{
+    color:rgba(255, 255, 255, .8);
+    font-size: 12px;
+    padding-left: 45px;    
+}
+summary
+{
+    cursor: pointer;
+}
+details p{
+    padding-bottom: 15px;
+}
+.sign-up-content p{
+    color: white;
+    text-align: center;
+}

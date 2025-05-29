@@ -1,0 +1,231 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h6{
+    color: white;
+    padding-bottom: 0;
+}
+body{
+background-image: url(../images/photo-1574375927938-d5a98e8ffe85.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+}
+.active{
+    color: rgb(229, 11, 29) !important;
+    
+}
+.navbar
+{
+    background-color: transparent !important;
+}
+.navigation-bar{
+    height: 33vh;
+    background-image: url(../images/netflix-background-gs7hjuwvv2g0e9fj.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* position: fixed;
+    width: 100%; */
+    /* z-index: 87878787; */
+}
+nav a:hover{
+    color: rgb(229, 11, 29) !important;
+}
+nav a {
+    color: white !important; 
+}
+.dropdown-menu a{
+    color: black !important;
+}
+img{
+    width: 100%;
+}
+.trending{
+    padding-top: 50px;
+}
+.row-no-wrap span{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: small;
+}
+
+.row-no-wrap{
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    scrollbar-width: none; 
+}
+.light-box-container h2,h3,p,h5{
+    text-shadow: 8px 4px 4px rgba(0, 0, 0, 1) !important;
+} 
+.light-box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+.light-box{
+    background-color: black;
+    width: 75%;
+    max-height: 550px !important;
+    top: 60px;
+    position: fixed;
+}
+.ligth-box__caption{
+    color: white;
+}
+.light-box__img img:hover{
+    transform: scale(1.05);
+}
+.light-box__img img{
+    border-radius: 10px;
+}
+.light-box-content{
+    background-image: url(../images/1366_2000\ 1.png);
+    background-size: cover;
+    align-items: center;
+
+/
+}
+.fa-circle-xmark{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.light-box-content i{
+    color: steelblue;
+    cursor: pointer;
+}
+.light-box-content i:hover{
+    transform: scale(1.2);
+
+}
+.fa-circle-xmark:hover{
+    color: rgb(229, 11, 29);
+}
+.fa-circle-right{
+position: absolute;
+right: 15px;
+z-index: 1;
+}
+.fa-circle-left{
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+
+}
+
+/* .fa-gauge{
+    color: steelblue;
+    padding: 20px 0;
+}
+.fa-globe{
+    color: steelblue;
+    padding: 20px 0;
+}*/
+/* .fa-code-merge{
+padding-top: 20px;
+} */
+.icons i
+{
+    color: steelblue;
+    padding: 20px 0;
+}
+.icons i:hover{
+    transform: scale(1.2);
+}
+.icons i:hover p{
+    transform: scale(1.2);
+
+}
+.navbar-toggler i{
+color:  #e50913;
+}
+.page-control{
+
+    padding-top: 100px;
+    min-height: 100vh;
+    background-image: url(../images/netflix-background-gs7hjuwvv2g0e9fj.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    }  
+.page-control h3{
+    
+    background-color: #9a050c;
+
+}
+.page-control img{
+border-radius: 15px;
+position: relative;
+} 
+.item-hover:hover{
+    transform: scale(1.05);
+}
+.item-hover{
+    padding-bottom: 20px;
+    color: white;
+}
+.item-hover p{
+    font-size: 12px;
+    padding: 0 5px;
+}
+.item-hover:hover .overlay{
+    opacity: 1;
+    transform: translateY(0%);
+    pointer-events: auto;
+    top:5%;
+    left: 10%;
+    }
+.overlay{
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    position: absolute;
+    bottom: 10%; 
+    left:10%;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    border-radius: 15px;
+    /* height: auto; */
+}
+/* iframe{
+    margin: auto;
+    position: absolute;
+    z-index: 9999999999999;
+} */
+ #iframe-control{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 9999999999999;
+ }
+#search-dropdown li{
+    color: white !important;
+    cursor: pointer;
+}
+#search-dropdown{
+    position: absolute;
+    z-index: 9999999999999;
+    right: 25px;
+}
+#search-dropdown li:hover{
+    background-color: rgba(229, 11, 29, 0.8) !important;
+}
