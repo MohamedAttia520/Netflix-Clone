@@ -1,5 +1,7 @@
+
 const lightBoxContainer = document.querySelector('.light-box-container');
 const lightBoxContent = document.querySelector('.light-box-content');
+const lightBox=document.querySelector('.light-box')
 const lightBoxImg = document.querySelector('.light-box__img >img');
 const ligthBoxTitle = document.querySelector('.ligth-box__caption >h2');
 const typeOfItem = document.querySelector('.icons > h3');
@@ -262,6 +264,9 @@ playBtn.addEventListener('click', (e) => {
 lightBoxContainer.addEventListener('click', (e) => {
   e.stopImmediatePropagation();
   const iframe = document.querySelector('#iframe-control iframe');
+  if(iframe.classList.contains('.d-none')){
+  lightBoxContainer.classList.add('d-none');
+  }
   if (iframe) {
     iframe.classList.add('d-none');
   }
@@ -412,5 +417,25 @@ return;
   }else{
     searchDropdown.classList.add('d-none')
   }
-
 })
+
+// AIzaSyCa2I3WBIdKlATMb-EuhtQz0oDUgjf4riU
+const apiKey='AIzaSyCa2I3WBIdKlATMb-EuhtQz0oDUgjf4riU';
+async function askGemini() {
+const userInput=document.querySelector('#user-input');
+try {
+  const response= await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+  {method:'POST',
+  headers:{'Content-Type': 'application/json'},
+  body:JSON.stringify({contents:[{parts:[{text:userInput}]}]})
+  });
+  const data=await response.json();
+  const result=data.candidates?.[0]?.content?.parts?.text ||'No response';
+  document.getElementById('response').innerText=result;
+} catch (error) {
+  console.log(error);
+  
+}
+}
+document.querySelector('#gemini-btn').addEventListener('click',askGemini);
+
