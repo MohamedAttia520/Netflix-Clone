@@ -15,7 +15,8 @@ const signInBtn = document.querySelector('#sign-in-btn');
 const signInEmailInput = document.querySelector('#sign-in-email');
 const signInPassInput = document.querySelector('#sign-in-pass');
 const signInError=document.querySelector('#sign-in-error');
-
+const logNavBtn=document.querySelector('.log-nav-btn');
+const signNavBtn=document.querySelector('.sign-nav-btn');
 
 function checkLogin(){
 signInBtn.addEventListener('click',()=>{
@@ -49,7 +50,13 @@ signUp.addEventListener('click', (e) => {
 })
 signUpNow.addEventListener('click', (e) => {
     e.preventDefault();
-    validateSignUpForm();
+    if(validateSignUpForm()){
+       const success= document.querySelector('.sign-up-content p');
+       success.innerHTML='<p style="color: green;">your membership created successfully <br> sign in now</p>'
+       signUpMailInput.value=null;
+       signUpPassInput.value=null;
+       signUpPassCheckInput=null;
+    }
 })
 
 async function getData() {
@@ -97,10 +104,6 @@ function validateConfirmPass() {
         passErrorCheck.textContent = '';
         return true
     }
-
-
-
-
 }
 function validateSignUpForm() {
 
@@ -119,10 +122,20 @@ function validateSignUpForm() {
             console.log(error);
 
         }
-        signInContent.classList.add('d-block');
-        signUpContent.classList.add('d-none');
-    }
-
-
+        return true
+        // signInContent.classList.add('d-block');
+        // signUpContent.classList.add('d-none');
+    }else{return false}
 }
+signNavBtn.addEventListener('click', () => {
+    signInContent.classList.add('d-none');
+    signUpContent.classList.remove('d-none');
+    
+});
+
+logNavBtn.addEventListener('click', () => {
+    signUpContent.classList.add('d-none');
+    signInContent.classList.remove('d-none');
+    window.location.reload()
+});
 
