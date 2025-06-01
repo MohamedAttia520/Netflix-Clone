@@ -62,7 +62,7 @@ function displayData(dataArr, section) {
     // console.log(id);
 
     cartona += `
-      <div class="col-sm-4 col-md-2 trending-item" data-index="${index}">
+      <div class="col-sm-4 col-md-2 trending-item " data-index="${index}">
         <figure><img  class="rounded" src="https://image.tmdb.org/t/p/w500/${item.poster_path}" alt=""></figure>
         <h6>${title}</h6>
         <span class="fw-lighter">${date}</span>
@@ -233,13 +233,9 @@ function displayTrailer(trailers) {
   document.getElementById('iframe-control').innerHTML = output;
 }
 
-// playBtn.addEventListener('click', (e) => {
-//   e.stopImmediatePropagation()
-//   lightBoxContent.classList.add('d-none');
-//   document.querySelector('iframe').classList.remove('d-none')
-// })
+
 playBtn.addEventListener('click', (e) => {
-  e.stopImmediatePropagation();
+  e.stopPropagation();
   lightBoxContent.classList.add('d-none');
   const iframe = document.querySelector('#iframe-control iframe');
   if (iframe) {
@@ -249,7 +245,7 @@ playBtn.addEventListener('click', (e) => {
 
 
 lightBoxContainer.addEventListener('click', (e) => {
-  e.stopImmediatePropagation();
+  e.stopPropagation();
   const iframe = document.querySelector('#iframe-control iframe');
   if(iframe.classList.contains('.d-none')){
   lightBoxContainer.classList.add('d-none');
@@ -388,8 +384,9 @@ return;
   searchDropdown.classList.remove('d-none');
 
   document.querySelectorAll('#search-dropdown .dropdown-item').forEach(item=>{
-    item.addEventListener('click',()=>{
+    item.addEventListener('mousedown',()=>{
       const index=item.getAttribute('data-index');
+      searchInput.value = results[index].title || results[index].name;
       searchDropdown.classList.add('d-none');
       showHome();
       lightBoxContainer.classList.replace('d-none','d-flex');
