@@ -26,7 +26,7 @@ signInBtn.addEventListener('click',()=>{
       return emailInput===user.email&&passInput===user.pass
     })
     if(findUser){
-        window.location.href ='https://mohamedattia520.github.io/Netflix-Clone/movieApp%20home%20page/';
+        window.location.href ='file:///D:/ITI/movieApp%20project/movieApp%20home%20page/index.html';
     }else
     {
     signInError.textContent='Invalid email or password.'
