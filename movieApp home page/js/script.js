@@ -63,7 +63,7 @@ function displayData(dataArr, section) {
 
     cartona += `
       <div class="col-sm-4 col-md-2 trending-item" data-index="${index}">
-        <figure><img src="https://image.tmdb.org/t/p/w500/${item.poster_path}" alt=""></figure>
+        <figure><img  class="rounded" src="https://image.tmdb.org/t/p/w500/${item.poster_path}" alt=""></figure>
         <h6>${title}</h6>
         <span class="fw-lighter">${date}</span>
       </div>`;
@@ -214,20 +214,7 @@ async function getTrailer(id) {
   }
 }
 
-// function displayTrailer(trailers) {
-//   let output = '';
-//   trailers.forEach(video => {
-//     output += `
-//       <iframe width="800" height="450"
-//         src="https://www.youtube.com/embed/${video.key}"
-//         title="${video.name}"
-//         frameborder="0"
-//         allowfullscreen>
-//       </iframe><br><br>
-//     `;
-//   });
-//   document.getElementById('iframe-control').innerHTML = output;
-// }
+
 function displayTrailer(trailers) {
   let output = '';
   if (trailers.length > 0) {
@@ -309,9 +296,7 @@ async function getNavData(field) {
   // console.log(navDataRes.results);
 };
 
-// const tv=document.querySelector('#tv');
-// const movie=document.querySelector('#movie');
-// console.log(movie);
+
 document.querySelector('.navbar-nav').addEventListener('click', async (e) => {
   const field = e.target.id; // 'tv' or 'movie'
 
@@ -321,9 +306,6 @@ document.querySelector('.navbar-nav').addEventListener('click', async (e) => {
     displayNavData(navDataRes);
   }
 });
-
-
-
 
 function displayNavData(data) {
   let cartona = ``;
@@ -422,7 +404,7 @@ return;
 // AIzaSyCa2I3WBIdKlATMb-EuhtQz0oDUgjf4riU
 const apiKey='AIzaSyCa2I3WBIdKlATMb-EuhtQz0oDUgjf4riU';
 async function askGemini() {
-const userInput=document.querySelector('#user-input');
+const userInput=document.querySelector('#user-input').value;
 try {
   const response= await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
   {method:'POST',
@@ -430,12 +412,21 @@ try {
   body:JSON.stringify({contents:[{parts:[{text:userInput}]}]})
   });
   const data=await response.json();
-  const result=data.candidates?.[0]?.content?.parts?.text ||'No response';
+  const result=data.candidates?.[0]?.content?.parts[0]?.text ||'No response';
+  console.log(data);
+  
   document.getElementById('response').innerText=result;
 } catch (error) {
   console.log(error);
   
 }
 }
-document.querySelector('#gemini-btn').addEventListener('click',askGemini);
+document.querySelector('#gemini-btn').addEventListener('click',()=>{
+  askGemini();
+  document.querySelector('.reply').classList.remove('d-none');
+});
+document.querySelector('#bot').addEventListener('click',()=>{
+  document.querySelector('.reply').classList.toggle('d-none');
+  document.querySelector('.gemini-input').classList.toggle('d-none')
+})
 

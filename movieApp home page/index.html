@@ -24,7 +24,7 @@
 
 <body>
   <section class="navigation-bar ">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
       <a class="navbar-brand" href="#"><img src="images/Vector.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
           </li>
         </ul>
         <div class="w-25">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" id="search">
+          <input class="form-control mr-sm-2 bg-transparent text-white" type="search" placeholder="Search..." aria-label="Search" id="search">
        </div>
 
 
@@ -157,7 +157,18 @@
 
       </div>
     </section>
-
+    <section class="chatbot">
+      <h2 class="text-danger">Ask Gemini</h2>
+      <div class="reply d-none rounded border border-danger border-3">
+      <p><strong>Gemini Says:</strong></p>
+      <div id="response"></div>
+      </div>
+      <img src="images/freepik__background__49558.png" alt="" id="bot"><br>
+      <div class="gemini-input d-none">
+        <input id="user-input"  placeholder="Type your question..." class="bg-transparent form-control text-white"></input><br>
+      <i id="gemini-btn" class="fa-solid fa-paper-plane"></i>
+      </div>
+    </section>
   </main>
 
 
